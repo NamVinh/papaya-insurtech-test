@@ -1,25 +1,25 @@
 # Papaya Insurtech — Test Submission
 
-**Ứng viên:** Đặng Nam Vinh &nbsp;|&nbsp; **Vị trí:** Fullstack Software Engineer &nbsp;|&nbsp; **Tháng 6 / 2026**
+**Candidate:** Dang Nam Vinh &nbsp;|&nbsp; **Position:** Fullstack Software Engineer &nbsp;|&nbsp; **June 2026**
 
 ---
 
-## Phần 1 — Logical Questions
+## Part 1 — Logical Questions
 
-> Chọn 6 câu (yêu cầu tối thiểu 5), trải đều 3 cấp độ.
+> Selected 6 questions (minimum 5 required), spread across 3 difficulty levels.
 
-| # | Câu hỏi | Cấp độ | Kỹ năng |
-|---|---------|--------|---------|
-| Q6 | [Vị Trí Tốt Nhất Trong Hàng Xếp Vào Rạp](./logical-questions/Q06-vi-tri-hang-rap.md) | Trung cấp | Observation |
-| Q7 | [Ghế Tốt Nhất Trên Xe Buýt](./logical-questions/Q07-ghe-xe-buyt.md) | Trung cấp | Observation, Giving |
-| Q16 | [Bia Trước Hay Nước Đá Trước?](./logical-questions/Q16-bia-truoc-nuoc-da-truoc.md) | Trung cấp | Observation, Curiosity |
-| Q12 | [Hướng Dẫn Đổ Xăng Nhanh Nhất](./logical-questions/Q12-do-xang-nhanh-nhat.md) | Chuyên sâu | Critical Thinking |
-| Q14 | [Thiết Kế Cửa Nhà Vệ Sinh Nam Công Cộng](./logical-questions/Q14-cua-wc-nam.md) | Chuyên sâu | Design |
-| Q15 | [Chọn Quầy Trái Cây Không Hỏi Ai](./logical-questions/Q15-chon-quan-trai-cay.md) | Chuyên sâu | Observation, Pattern |
+| # | Question | Level | Skill |
+|---|----------|-------|-------|
+| Q6 | [Best Position in the Cinema Queue](./logical-questions/Q06-vi-tri-hang-rap.md) | Intermediate | Observation |
+| Q7 | [Best Seat on the Bus](./logical-questions/Q07-ghe-xe-buyt.md) | Intermediate | Observation, Giving |
+| Q16 | [Beer First or Ice First?](./logical-questions/Q16-bia-truoc-nuoc-da-truoc.md) | Intermediate | Observation, Curiosity |
+| Q12 | [Fastest Way to Fill Up at a Gas Station](./logical-questions/Q12-do-xang-nhanh-nhat.md) | Advanced | Critical Thinking |
+| Q14 | [Designing a Public Men's Restroom Door](./logical-questions/Q14-cua-wc-nam.md) | Advanced | Design |
+| Q15 | [Picking the Best Fruit Stall Without Asking Anyone](./logical-questions/Q15-chon-quan-trai-cay.md) | Advanced | Observation, Pattern |
 
 ---
 
-## Phần 2 — AI Engineering Challenges
+## Part 2 — AI Engineering Challenges
 
 > Tier: **Intermediate** — Challenges 06, 07, 09
 

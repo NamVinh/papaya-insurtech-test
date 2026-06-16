@@ -1,45 +1,45 @@
-# Q7 — Ghế Tốt Nhất Trên Xe Buýt
+# Q7 — Best Seat on the Bus
 
-**Kỹ năng:** Observation · Giving &nbsp;|&nbsp; **Cấp độ:** Trung cấp
+**Skill:** Observation · Giving &nbsp;|&nbsp; **Level:** Intermediate
 
-> *Quan sát tương tự Q6, nhưng cộng thêm tính đến người cao tuổi, lối đi.*
-
----
-
-## Trước tiên: "tốt nhất" cho ai?
-
-Câu này hay hơn Q6 ở chỗ nó buộc tôi phải xác định chủ thể — tốt nhất **cho mình** hay **cho cả không gian xe**?
-
-Tôi sẽ trả lời cả hai.
+> *Similar observation to Q6, but adds consideration for elderly passengers and aisle flow.*
 
 ---
 
-## Tốt nhất cho bản thân
+## First: "best" for whom?
 
-| Vị trí | Ưu điểm | Nhược điểm |
-|--------|---------|------------|
-| Hàng đầu gần cửa lên | Xuống nhanh ở điểm đầu, ngồi chắc khi phanh | Phải nhường cho người già/bầu — áp lực xã hội cao |
-| Giữa xe, cạnh cửa sổ | Ít bị xóc hơn (điểm cân bằng), có tầm nhìn | Khó ra nếu đông |
-| Hàng cuối gần cửa xuống | Ra nhanh ở điểm cuối, không ai ngồi phía sau | Xóc nhất, mùi động cơ ở một số xe |
+This question is more interesting than Q6 because it forces me to define the subject — best **for myself**, or **for the whole bus system**?
 
-**Lựa chọn cá nhân:** Hàng giữa, ghế sát cửa sổ, cạnh lối đi phụ. Lý do: cân bằng giữa thoải mái và linh hoạt, không phải ghế ưu tiên nên không có áp lực nhường.
+I will answer both.
 
 ---
 
-## Tốt nhất cho cả không gian xe
+## Best for myself
 
-Đây mới là phần thú vị của câu hỏi.
+| Position | Pros | Cons |
+|----------|------|------|
+| Front row near boarding door | Exit quickly at early stops, stable when braking | Social pressure to give up seat for elderly / pregnant passengers |
+| Middle, window seat | Less vibration (near the centre of balance), good view | Hard to exit when crowded |
+| Rear row near exit door | Exit quickly at final stops, no one sitting behind you | Roughest ride, engine fumes on some buses |
 
-Xe buýt hoạt động tốt nhất khi **luồng người di chuyển đều** — không tắc cửa lên, không chen nhau cửa xuống. Điều đó có nghĩa là:
-
-- Người trẻ khỏe nên **tránh ghế đầu gần cửa lên** — để lại cho người già, bầu, có em nhỏ.
-- Nếu chỉ đi 2–3 trạm, **đứng gần cửa** tốt hơn là ngồi rồi phải chen ra.
-- Nếu đi nhiều trạm, **ngồi sâu vào trong** giúp người lên sau có chỗ đứng gần cửa.
+**Personal choice:** Middle row, window seat, next to a secondary aisle. Reason: balances comfort and flexibility; it is not a priority seat so there is no pressure to give it up.
 
 ---
 
-## Điểm thường bị bỏ qua
+## Best for the whole bus system
 
-Ghế **cạnh lối đi** tệ hơn ghế cạnh cửa sổ về thoải mái, nhưng **tốt hơn về xã hội** — dễ đứng dậy nhường chỗ mà không làm phiền người ngồi trong.
+This is the more interesting part of the question.
 
-> Ghế tốt nhất không chỉ là ghế thoải mái nhất — mà là ghế tôi ngồi mà không tạo ma sát cho người xung quanh.
+A bus works best when **passenger flow is smooth** — no blocking at the boarding door, no pushing at the exit. That means:
+
+- Young, able-bodied passengers should **avoid the front seats near the boarding door** — leave those for elderly, pregnant, or passengers with children.
+- If travelling only 2–3 stops, **standing near the door** is better than sitting and then having to push through.
+- If travelling many stops, **sitting further inside** gives standing room near the door to passengers who board after you.
+
+---
+
+## The often-overlooked point
+
+An **aisle seat** is less comfortable than a window seat, but **better for social flow** — you can stand up to offer your seat without disturbing the person sitting next to you.
+
+> The best seat is not just the most comfortable one — it is the seat I occupy without creating friction for the people around me.

@@ -1,59 +1,59 @@
-# Q14 — Thiết Kế Cửa Nhà Vệ Sinh Nam Công Cộng
+# Q14 — Designing a Public Men's Restroom Door
 
-**Kỹ năng:** Observation · Design &nbsp;|&nbsp; **Cấp độ:** Chuyên sâu
+**Skill:** Observation · Design &nbsp;|&nbsp; **Level:** Advanced
 
-> *Liệt kê ràng buộc, phác họa các phương án, so sánh, chọn kèm lý do.*
-
----
-
-## Ràng buộc (Constraints)
-
-| Ràng buộc | Mức ưu tiên | Lý do |
-|-----------|-------------|-------|
-| Vệ sinh — tránh tay chạm bề mặt bẩn | **Cao** | Tay sau khi dùng WC dù rửa vẫn tâm lý ngại chạm |
-| Riêng tư — không nhìn thấy vào trong khi cửa đang mở | **Cao** | Trải nghiệm cơ bản |
-| Luồng đi — nhiều người ra vào không tắc nghẽn | **Cao** | Giờ cao điểm (trung tâm thương mại, sân bay) |
-| Hạn chế mùi thoát ra ngoài | **Trung bình** | Cửa nào cũng rò mùi trừ khi có áp suất âm |
-| Tiếp cận — xe lăn, tay đang bận đồ | **Cao** | Quy định & nhân văn |
-| Chi phí & bảo trì thấp | **Thấp** | Trade-off với trải nghiệm |
+> *List constraints, sketch options, compare them, and pick one with reasoning.*
 
 ---
 
-## Các phương án
+## Constraints
 
-### Phương án 1: Cửa mở ra ngoài (tiêu chuẩn hiện tại)
-- **Ưu:** Rẻ, đơn giản, nếu ngất trong WC dễ phá cửa từ ngoài.
-- **Nhược:** Người ra phải **kéo tay vào cửa vừa rửa sạch**. Tắc lối đi nếu hành lang hẹp.
-
-### Phương án 2: Cửa mở vào trong
-- **Ưu:** Không ảnh hưởng hành lang.
-- **Nhược:** Không gian trong WC nhỏ bị cửa chiếm thêm. Nguy hiểm nếu ngất chắn cửa.
-
-### Phương án 3: Cửa trượt ngang
-- **Ưu:** Không chiếm không gian. Dùng cùi chỏ đẩy được → vệ sinh hơn.
-- **Nhược:** Ray trượt tích tụ bẩn, bảo trì phức tạp hơn.
-
-### Phương án 4: Không cửa + vách chắn góc khuất (kiểu sân bay quốc tế)
-- **Ưu:** **Không cần chạm gì cả**. Luồng đi cực nhanh. Mùi hút ra bằng hệ thống thông gió.
-- **Nhược:** Riêng tư phụ thuộc vào thiết kế vách. Chi phí ban đầu cao hơn. Cần diện tích rộng hơn để bố trí góc khuất.
-
-### Phương án 5: Cửa đẩy 1 chiều (chỉ đẩy ra ngoài bằng vai/lưng)
-- **Ưu:** Ra ngoài không cần dùng tay. Rẻ, không cần điện.
-- **Nhược:** Vào trong vẫn phải kéo (hoặc thiết kế thêm thanh đẩy phía trong).
+| Constraint | Priority | Reason |
+|------------|----------|--------|
+| Hygiene — avoid touching dirty surfaces | **High** | Even after washing hands, touching the door feels unpleasant |
+| Privacy — cannot see inside while the door is open | **High** | Basic user expectation |
+| Flow — many people in and out without congestion | **High** | Peak hours (malls, airports) |
+| Limit odour escaping | **Medium** | Any door leaks smell unless there is negative air pressure |
+| Accessibility — wheelchairs, hands full | **High** | Regulatory requirement and basic decency |
+| Low cost and maintenance | **Low** | Trade-off against user experience |
 
 ---
 
-## Khuyến nghị
+## Options
 
-**Bối cảnh:** Trung tâm thương mại / sân bay tại Việt Nam — lưu lượng cao, không gian đủ rộng.
+### Option 1: Outward-swinging door (current standard)
+- **Pros:** Cheap, simple; if someone collapses inside the door can be forced open from outside.
+- **Cons:** The person leaving must **pull the handle with a freshly washed hand**. Blocks the corridor if the hallway is narrow.
 
-**Lựa chọn:** Phương án 4 (không cửa + vách góc khuất) kết hợp hệ thống thông gió áp suất âm.
+### Option 2: Inward-swinging door
+- **Pros:** Does not affect the corridor.
+- **Cons:** The door takes up space inside the stall. Dangerous if someone collapses against it.
 
-**Lý do:**
-- Giải quyết triệt để ràng buộc cao nhất: **vệ sinh** (không chạm) + **luồng đi** (không tắc).
-- Riêng tư đảm bảo bằng góc khuất thiết kế đúng — đã được sân bay và nhà hàng cao cấp chứng minh.
-- Bảo trì ít hơn: không có bản lề, không có ổ khóa.
+### Option 3: Sliding door
+- **Pros:** No swing arc needed. Can be pushed with an elbow — more hygienic.
+- **Cons:** The track accumulates dirt; more complex to maintain.
 
-**Đánh đổi chấp nhận được:** Chi phí xây dựng ban đầu cao hơn ~20%, nhưng bù lại bằng chi phí bảo trì thấp hơn dài hạn và trải nghiệm người dùng tốt hơn đáng kể.
+### Option 4: No door + angled privacy wall (international airport style)
+- **Pros:** **No touching required at all**. Maximum flow speed. Odour handled by the ventilation system.
+- **Cons:** Privacy depends entirely on wall geometry. Higher upfront cost. Requires more floor space for the angled layout.
 
-**Trường hợp không dùng được:** Diện tích nhỏ, ngân sách thấp → Phương án 5 (cửa đẩy 1 chiều) là thực tế nhất.
+### Option 5: One-way push door (push out with shoulder or back only)
+- **Pros:** No hands needed to exit. Cheap, no electricity required.
+- **Cons:** Entry still requires pulling (or an additional push bar fitted on the inside).
+
+---
+
+## Recommendation
+
+**Context:** Shopping mall or airport — high traffic, sufficient floor space.
+
+**Choice:** Option 4 (no door + angled privacy wall) combined with a negative-pressure ventilation system.
+
+**Reasoning:**
+- Fully resolves the two highest-priority constraints: **hygiene** (no touching) and **flow** (no door obstruction).
+- Privacy is guaranteed by correct wall-angle geometry — already proven in airports and upscale restaurants.
+- Lower maintenance: no hinges, no locks.
+
+**Accepted trade-off:** ~20% higher construction cost, offset by lower long-term maintenance costs and significantly better user experience.
+
+**When Option 4 is not feasible:** Small floor area or tight budget → Option 5 (one-way push door) is the most practical alternative.

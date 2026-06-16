@@ -1,59 +1,62 @@
-# Q12 — Hướng Dẫn Đổ Xăng Nhanh Nhất
+# Q12 — Fastest Way to Fill Up at a Gas Station
 
-**Kỹ năng:** Critical Thinking · Optimization &nbsp;|&nbsp; **Cấp độ:** Chuyên sâu
+**Skill:** Critical Thinking · Optimization &nbsp;|&nbsp; **Level:** Advanced
 
-> *Viết quy trình tối ưu hóa thời gian đổ xăng. Xác định điểm nghẽn, song song hóa, giả định bố cục.*
-
----
-
-## Giả định
-
-- Xe máy, trạm xăng thông thường ở Việt Nam.
-- Thanh toán được bằng ví điện tử (MoMo/ZaloPay) — không chỉ tiền mặt.
-- Biết trước mình cần đổ bao nhiêu (full tank hoặc một khoản cố định).
+> *Write an optimised process for minimising time at a gas station. Identify the bottleneck, parallelise steps, state layout assumptions.*
 
 ---
 
-## Phân tích điểm nghẽn
+## Assumptions
 
-Tổng thời gian = `vào trạm` + `chờ lượt` + `bơm xăng` + `thanh toán` + `ra`
-
-Bước nào tốn thời gian nhất? **Thanh toán** — đặc biệt nếu trả tiền mặt, phải thối lại. Bước nào không thể rút ngắn? **Bơm xăng** — máy bơm tốc độ cố định.
-
-Vậy bài toán thực sự là: **loại bỏ mọi thứ xảy ra tuần tự mà có thể làm song song với bơm xăng**.
+- Motorbike, standard gas station.
+- Digital payment is available (mobile QR app) — not cash only.
+- The desired amount is decided in advance (full tank or a fixed sum).
 
 ---
 
-## Quy trình tối ưu
+## Bottleneck analysis
 
-### Trước khi đến trạm
-1. Mở sẵn app thanh toán, chọn phương thức — không làm lúc đứng chờ.
-2. Quan sát từ xa xem trụ nào vắng nhất trước khi vào hẳn.
+Total time = `entering` + `waiting in queue` + `pumping` + `payment` + `leaving`
 
-### Tại trạm — song song hóa
-1. Dắt xe vào trụ vắng, không phải trụ gần nhất.
-2. **Nói số tiền / lít ngay lập tức** khi nhân viên hỏi — không do dự.
-3. Trong khi bơm xăng: mở app, chuẩn bị QR code hoặc đếm tiền mặt sẵn.
-4. *(Nếu cần đội mũ bảo hiểm lại / lấy đồ trong cốp — làm trong lúc bơm, không làm sau).*
+Which step takes the most time? **Payment** — especially cash with change. Which step cannot be shortened? **Pumping** — the pump runs at a fixed rate.
 
-### Thanh toán & rời đi
-1. Đưa QR / tiền ngay khi vòi bơm vừa rút ra — không đợi nhân viên nhắc.
-2. Không kiểm tra đồng hồ xăng sau khi trả tiền — tin nhân viên, tiết kiệm 5 giây.
-3. Ra ngay, không để xe chắn trụ trong lúc cất đồ.
+So the real problem is: **eliminate everything that happens sequentially but could be done in parallel with pumping**.
 
 ---
 
-## Tổng thời gian tiết kiệm được
+## Optimised process
 
-| Hành động | Trước tối ưu | Sau tối ưu |
-|-----------|-------------|------------|
-| Chọn trụ | Vào trụ gần → đợi | Quan sát từ xa → vào thẳng |
-| Nói số tiền | Suy nghĩ tại chỗ | Quyết định trước khi đến |
-| Thanh toán | Lấy ví sau khi bơm xong | Chuẩn bị trong lúc bơm |
-| Ra khỏi trụ | Cất đồ → mới rời | Cất đồ song song với nhân viên thu tiền |
+### Before arriving
+
+1. Open the payment app and select the payment method — do not do this while standing at the pump.
+2. Scan from a distance for the least-busy pump before pulling in.
+
+### At the station — parallelise
+
+1. Pull up to the quiet pump, not the nearest one.
+2. **State the amount / litres immediately** when the attendant asks — no hesitation.
+3. While the pump is running: open the app, have the QR code or exact cash ready.
+4. *(If you need to put on your helmet or retrieve items from storage — do it while pumping, not after.)*
+
+### Payment and departure
+
+1. Present the QR / cash the moment the nozzle is removed — do not wait for the attendant to prompt you.
+2. Do not check the fuel gauge after paying — trust the attendant, save 5 seconds.
+3. Leave immediately; do not block the pump while putting things away.
 
 ---
 
-## Đánh đổi chấp nhận được
+## Time saved
 
-Tối ưu này bỏ qua việc "kiểm tra lại đồng hồ xăng" — chấp nhận một mức tin tưởng nhỏ vào nhân viên để đổi lấy 5–10 giây. Ở trạm xăng lạ, tôi sẽ kiểm tra lại.
+| Action | Before optimisation | After optimisation |
+|--------|--------------------|--------------------|
+| Choosing a pump | Pull up to nearest → wait | Scan from distance → go straight in |
+| Stating the amount | Decide on the spot | Decide before arriving |
+| Payment | Get wallet out after pumping ends | Prepare during pumping |
+| Leaving the pump | Store items → then leave | Store items while attendant processes payment |
+
+---
+
+## Accepted trade-off
+
+This process skips "checking the fuel gauge after payment" — accepting a small degree of trust in the attendant in exchange for 5–10 seconds. At an unfamiliar station, I would still check.

@@ -1,43 +1,43 @@
-# Q15 — Chọn Quầy Trái Cây "Ngon, Bổ, Rẻ" Không Hỏi Ai
+# Q15 — Picking the Best Fruit Stall Without Asking Anyone
 
-**Kỹ năng:** Observation · Critical Thinking · Pattern Recognition &nbsp;|&nbsp; **Cấp độ:** Chuyên sâu
+**Skill:** Observation · Critical Thinking · Pattern Recognition &nbsp;|&nbsp; **Level:** Advanced
 
-> *Không thử, không tương tác — chỉ dùng mắt. Tìm một dấu hiệu nén gợi lên cả ba lớp: ngon, bổ, rẻ.*
-
----
-
-## Cái bẫy đề đã cảnh báo
-
-- **"Quầy đông khách"** → không dùng được buổi trưa vắng, và đông khách có thể vì rẻ chứ không phải ngon.
-- **"Trái cây đẹp, tươi"** → đó là *kết quả*, không phải *dấu hiệu nguồn*. Trái cây đẹp có thể được chọn lọc mặt tiền, bên dưới vẫn tệ.
-
-Vậy không nhìn vào trái cây — nhìn vào **quầy và người bán**.
+> *No tasting, no interaction — eyes only. Find one signal that implies all three layers: good taste, nutritious, reasonably priced.*
 
 ---
 
-## Dấu hiệu tôi chọn
+## The traps the question warns against
 
-> **Cân để ở vị trí khách nhìn thấy mặt hiển thị, không bị che.**
+- **"The busy stall"** → not usable at a quiet midday lull, and a crowd can mean cheap, not good.
+- **"The fruit looks fresh and beautiful"** → that is a *result*, not a *source signal*. A beautiful front-display row may have been hand-picked; what lies beneath can still be poor quality.
 
----
-
-## Tại sao một dấu hiệu này gợi lên cả 3 lớp
-
-**→ "Rẻ" (giá minh bạch):**
-Người bán đặt cân hướng ra phía khách có nghĩa là chấp nhận để khách kiểm soát — không có chỗ để cân gian. Điều này gợi lên người bán không cần gian lận giá để có lời, tức là biên lợi nhuận đến từ chất lượng và lượng khách ổn định, không từ mỗi lần cân.
-
-**→ "Ngon" (chất lượng ổn định):**
-Người bán tự tin để cân công khai thường cũng tự tin vào hàng của mình. Nếu trái cây hay bị trả lại hoặc khách phàn nàn, người bán sẽ không muốn thêm điểm ma sát bằng cách để cân lộ ra. Minh bạch giao dịch và tự tin chất lượng thường đi cùng nhau.
-
-**→ "Bổ" (nguồn hàng đáng tin):**
-Quầy chịu minh bạch về cân — thường cũng minh bạch về nguồn gốc. Dấu hiệu gián tiếp: nếu bên cạnh cân còn có thùng hàng với nhãn xuất xứ không bị che, xác suất hàng không rõ nguồn gốc thấp hơn đáng kể.
+So: do not look at the fruit — look at **the stall and the vendor**.
 
 ---
 
-## Giới hạn của dấu hiệu này
+## The signal I choose
 
-Dấu hiệu này **sai** khi:
-- Quầy mới mở, chưa có thói quen — cân để hướng ra vì vô tình, không phải vì tự tin.
-- Chợ quy định bắt buộc cân hướng ra phía khách — lúc đó dấu hiệu mất đi tính phân biệt.
+> **The scale is positioned so the customer can read the display face — it is not hidden or turned away.**
 
-Trong hai trường hợp này, tôi kết hợp thêm dấu hiệu phụ: **người bán có khách quen dừng lại nói chuyện ngắn mà không mua gì** — đó là tín hiệu quan hệ lâu năm, khó giả.
+---
+
+## Why this one signal implies all three layers
+
+**→ "Reasonably priced" (price transparency):**
+A vendor who positions the scale facing the customer is accepting customer oversight — there is no room for false weighing. This implies the vendor does not need to cheat on weight to make a profit; their margin comes from quality and a stable customer base, not from shaving every transaction.
+
+**→ "Good taste" (consistent quality):**
+A vendor confident enough to weigh in public is usually also confident in their produce. If the fruit were frequently returned or complained about, the vendor would not want an additional friction point by making the scale visible. Transactional transparency and quality confidence tend to go together.
+
+**→ "Nutritious" (trustworthy sourcing):**
+A stall transparent about weighing is generally transparent about origin too. A secondary indicator: if the boxes next to the scale have visible, uncovered origin labels, the probability of unknown-origin produce drops significantly.
+
+---
+
+## Limits of this signal
+
+This signal is **wrong** when:
+- The stall is newly opened and the scale faces outward by accident rather than by habit.
+- The market mandates that all scales face customers by regulation — in that case the signal loses its discriminating power.
+
+In these two cases I add a supplementary signal: **a regular customer who stops to chat briefly without buying anything** — that indicates a long-standing relationship, which is hard to fake.
