@@ -4,7 +4,7 @@
 
 ## Live demo
 
-> Deployed URL will be added after Vercel deploy.
+**https://challenge-09-claims-dashboard.vercel.app**
 
 ## How to run locally
 

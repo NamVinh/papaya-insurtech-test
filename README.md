@@ -27,4 +27,4 @@
 |---|-----------|-------|------|
 | 06 | [Policy Benefits Calculator](./challenge-06-benefits-calculator/) | Node.js · Jest | — |
 | 07 | [Claims Intake Wizard](./challenge-07-claims-wizard/) | React · Vite · Tailwind | [Live demo ↗](https://challenge-07-claims-wizard.vercel.app) |
-| 09 | Claims Analytics Dashboard | *(coming soon)* | — |
+| 09 | [Claims Analytics Dashboard](./challenge-09-claims-dashboard/) | React · Vite · Recharts | [Live demo ↗](https://challenge-09-claims-dashboard.vercel.app) |
