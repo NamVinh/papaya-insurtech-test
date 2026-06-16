@@ -21,4 +21,10 @@
 
 ## Phần 2 — AI Engineering Challenges
 
-> Coming soon.
+> Tier: **Intermediate** — Challenges 06, 07, 09
+
+| # | Challenge | Stack | Live |
+|---|-----------|-------|------|
+| 06 | [Policy Benefits Calculator](./challenge-06-benefits-calculator/) | Node.js · Jest | — |
+| 07 | [Claims Intake Wizard](./challenge-07-claims-wizard/) | React · Vite · Tailwind | [Live demo ↗](https://challenge-07-claims-wizard.vercel.app) |
+| 09 | Claims Analytics Dashboard | *(coming soon)* | — |

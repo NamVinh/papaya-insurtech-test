@@ -4,7 +4,7 @@
 
 ## Live demo
 
-> Deployed URL will be added after Vercel deploy.
+**https://challenge-07-claims-wizard.vercel.app**
 
 ## How to run locally
 
