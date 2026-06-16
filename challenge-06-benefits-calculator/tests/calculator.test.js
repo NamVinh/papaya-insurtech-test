@@ -12,7 +12,9 @@ const basePolicy = {
     OUTPATIENT: {
       annual_limit: 10000,
       per_visit_limit: 3000,
+      visits_per_year: 30,
       copay_percentage: 0,
+      copay_fixed: 0,
       deductible: 0,
       waiting_period_days: 0,
       exclusions: ['cosmetic treatment'],
@@ -20,7 +22,9 @@ const basePolicy = {
     SPECIALIST: {
       annual_limit: 5000,
       per_visit_limit: 2000,
+      visits_per_year: 20,
       copay_percentage: 20,
+      copay_fixed: 0,
       deductible: 0,
       waiting_period_days: 0,
       exclusions: ['hair loss treatment'],
@@ -28,7 +32,9 @@ const basePolicy = {
     INPATIENT: {
       annual_limit: 100000,
       per_visit_limit: null,
+      visits_per_year: null,
       copay_percentage: 10,
+      copay_fixed: 0,
       deductible: 2000,
       waiting_period_days: 30,
       exclusions: ['elective cosmetic surgery'],
@@ -36,7 +42,9 @@ const basePolicy = {
     DENTAL: {
       annual_limit: 2000,
       per_visit_limit: 3000,
+      visits_per_year: 10,
       copay_percentage: 30,
+      copay_fixed: 0,
       deductible: 0,
       waiting_period_days: 60,
       exclusions: ['teeth whitening'],
@@ -431,7 +439,7 @@ describe('Full 20-expense dataset', () => {
     expect(partial.length).toBeGreaterThan(0);
   });
 
-  test('every result has required output fields', () => {
+  test('every result has required output fields including remaining_visit_limit', () => {
     results.forEach((r) => {
       expect(r).toHaveProperty('expense_id');
       expect(r).toHaveProperty('submitted_amount');
@@ -439,6 +447,8 @@ describe('Full 20-expense dataset', () => {
       expect(r).toHaveProperty('member_pays');
       expect(r).toHaveProperty('decision');
       expect(r).toHaveProperty('reason');
+      expect(r).toHaveProperty('remaining_annual_limit');
+      expect(r).toHaveProperty('remaining_visit_limit');
       expect(typeof r.reason).toBe('string');
       expect(r.reason.length).toBeGreaterThan(0);
     });
@@ -458,5 +468,137 @@ describe('Full 20-expense dataset', () => {
   test('SPECIALIST annual limit not exceeded', () => {
     const specialist = summary.find((s) => s.benefit_type === 'SPECIALIST');
     expect(specialist.used).toBeLessThanOrEqual(specialist.annual_limit);
+  });
+
+  test('remaining_visit_limit decreases with each covered visit', () => {
+    const outpatientResults = results.filter(
+      (r) => r.expense_id.startsWith('EXP-0') &&
+              ['EXP-001','EXP-002','EXP-003'].includes(r.expense_id)
+    );
+    // Each consecutive OUTPATIENT visit should have a lower remaining_visit_limit
+    const limits = outpatientResults.map((r) => r.remaining_visit_limit);
+    expect(limits[0]).toBeGreaterThan(limits[1]);
+    expect(limits[1]).toBeGreaterThan(limits[2]);
+  });
+});
+
+// ══════════════════════════════════════════════════════════════════════════
+// 13. Fixed copay
+// ══════════════════════════════════════════════════════════════════════════
+describe('Fixed copay', () => {
+  const fixedCopayPolicy = {
+    ...basePolicy,
+    benefits: {
+      ...basePolicy.benefits,
+      OUTPATIENT: {
+        ...basePolicy.benefits.OUTPATIENT,
+        copay_fixed: 200,
+        copay_percentage: 0,
+      },
+    },
+  };
+
+  test('fixed copay deducted from covered amount', () => {
+    const state = initState(fixedCopayPolicy);
+    const result = processExpense(
+      makeExpense({ amount: 1000 }),
+      fixedCopayPolicy,
+      state,
+    );
+    expect(result.copay_amount).toBe(200);
+    expect(result.covered_amount).toBe(800);
+    expect(result.member_pays).toBe(200);
+    expect(result.decision).toBe('PARTIALLY_COVERED');
+    expect(result.reason).toMatch(/fixed copay/i);
+  });
+
+  test('fixed copay applied regardless of expense amount', () => {
+    const state = initState(fixedCopayPolicy);
+    const small = processExpense(makeExpense({ amount: 500 }), fixedCopayPolicy, state);
+    const large = processExpense(makeExpense({ amount: 2000 }), fixedCopayPolicy, state);
+    // Same flat copay for both
+    expect(small.copay_amount).toBe(200);
+    expect(large.copay_amount).toBe(200);
+  });
+
+  test('fixed copay cannot exceed eligible amount', () => {
+    const state = initState(fixedCopayPolicy);
+    const result = processExpense(
+      makeExpense({ amount: 150 }), // less than fixed copay of 200
+      fixedCopayPolicy,
+      state,
+    );
+    // copay capped at eligible (150)
+    expect(result.copay_amount).toBe(150);
+    expect(result.covered_amount).toBe(0);
+    expect(result.decision).toBe('DENIED');
+  });
+
+  test('fixed copay takes priority over percentage copay', () => {
+    const bothPolicy = {
+      ...basePolicy,
+      benefits: {
+        ...basePolicy.benefits,
+        OUTPATIENT: {
+          ...basePolicy.benefits.OUTPATIENT,
+          copay_fixed: 300,
+          copay_percentage: 20, // should be ignored when fixed > 0
+        },
+      },
+    };
+    const state = initState(bothPolicy);
+    const result = processExpense(makeExpense({ amount: 1000 }), bothPolicy, state);
+    expect(result.copay_amount).toBe(300); // fixed, not 200 (20%)
+  });
+});
+
+// ══════════════════════════════════════════════════════════════════════════
+// 14. Visit limit
+// ══════════════════════════════════════════════════════════════════════════
+describe('Visit limit', () => {
+  test('expense denied when annual visit limit is reached', () => {
+    const limitedPolicy = {
+      ...basePolicy,
+      benefits: {
+        ...basePolicy.benefits,
+        OUTPATIENT: { ...basePolicy.benefits.OUTPATIENT, visits_per_year: 2 },
+      },
+    };
+    const state = initState(limitedPolicy);
+    processExpense(makeExpense({ expense_id: 'V1', amount: 500 }), limitedPolicy, state); // visit 1
+    processExpense(makeExpense({ expense_id: 'V2', amount: 500 }), limitedPolicy, state); // visit 2
+    const result = processExpense(makeExpense({ expense_id: 'V3', amount: 500 }), limitedPolicy, state); // over limit
+    expect(result.decision).toBe('DENIED');
+    expect(result.reason).toMatch(/visit limit/i);
+    expect(result.remaining_visit_limit).toBe(0);
+  });
+
+  test('remaining_visit_limit counts down with each visit', () => {
+    const state = initState(basePolicy); // OUTPATIENT visits_per_year: 30
+    const r1 = processExpense(makeExpense({ expense_id: 'V1', amount: 500 }), basePolicy, state);
+    const r2 = processExpense(makeExpense({ expense_id: 'V2', amount: 500 }), basePolicy, state);
+    expect(r1.remaining_visit_limit).toBe(29);
+    expect(r2.remaining_visit_limit).toBe(28);
+  });
+
+  test('waiting-period-denied expense does not consume a visit', () => {
+    const state = initState(basePolicy); // DENTAL visits_per_year: 10
+    // DENTAL waiting = 60 days; Jan 5 = day 4 → denied
+    processExpense(
+      makeExpense({ benefit_type: 'DENTAL', date: '2024-01-05', amount: 500, diagnosis: 'Cleaning' }),
+      basePolicy,
+      state,
+    );
+    expect(state.visits_used['DENTAL']).toBe(0); // visit NOT counted
+  });
+
+  test('remaining_visit_limit is null for benefit with no visit limit', () => {
+    const state = initState(basePolicy); // INPATIENT visits_per_year: null
+    const result = processExpense(
+      makeExpense({ benefit_type: 'INPATIENT', date: '2024-06-01', amount: 10000, diagnosis: 'Surgery' }),
+      basePolicy,
+      state,
+    );
+    expect(result.remaining_visit_limit).toBeNull();
   });
 });
