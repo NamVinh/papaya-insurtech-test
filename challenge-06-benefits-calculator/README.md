@@ -2,58 +2,83 @@
 
 **Difficulty:** Intermediate · **Estimated time:** 2–4h · **Actual time:** ~2.5h
 
+## How to run
+
+```bash
+npm install
+npm start          # processes 20 expenses and prints formatted results
+npm test           # 46 unit tests
+npm run test:coverage  # with coverage report
+```
+
 ## What it does
 
-Takes a policy JSON and a list of medical expenses, then returns the covered amount per expense with a clear explanation. Processes expenses **chronologically** — earlier claims consume limits that affect later ones.
+Takes a policy JSON and a list of medical expenses, then returns the covered amount per expense with a clear explanation. Processes all expenses **chronologically** — earlier claims consume limits that affect later ones.
 
 ## Coverage rules implemented
 
 | Rule | Handled |
 |------|---------|
 | Annual limit per benefit type | ✅ |
-| Per-visit sub-limit | ✅ |
-| Copay percentage | ✅ |
+| Per-visit sub-limit (monetary cap per visit) | ✅ |
+| Copay — percentage (e.g. 10%, 30%) | ✅ |
+| Copay — fixed amount (e.g. 300 THB flat per visit) | ✅ |
 | Annual deductible | ✅ |
-| Waiting period | ✅ |
-| Exclusion list (diagnosis match) | ✅ |
-| Partial coverage when remaining < eligible | ✅ |
+| Waiting period (days since policy start) | ✅ |
+| Annual visit count limit | ✅ |
+| Exclusion list (diagnosis keyword match) | ✅ |
+| Partial coverage when remaining limit < eligible amount | ✅ |
+| Chronological limit consumption across all expenses | ✅ |
 
-## Run
+## Output per expense
 
-```bash
-npm install
-npm start        # demo: processes 20 expenses and prints results
-npm test         # 37 unit tests
+```json
+{
+  "expense_id": "EXP-006",
+  "submitted_amount": 1500,
+  "covered_amount": 1200,
+  "copay_amount": 300,
+  "deductible_applied": 0,
+  "member_pays": 300,
+  "decision": "PARTIALLY_COVERED",
+  "reason": "Fixed copay: member pays 300 THB per visit.",
+  "remaining_annual_limit": 3800,
+  "remaining_visit_limit": 19
+}
 ```
 
 ## Project structure
 
 ```
+challenge-06-benefits-calculator/
 ├── src/
-│   ├── calculator.js   ← reusable module (pure function, no side effects)
-│   └── index.js        ← demo runner with formatted output
+│   ├── calculator.js        ← reusable module (pure functions, no side effects)
+│   └── index.js             ← demo runner with formatted console output
 ├── data/
-│   ├── policy.json     ← policy definition (4 benefit types)
-│   └── expenses.json   ← 20 test expenses covering all scenarios
+│   ├── policy.json          ← policy definition (4 benefit types)
+│   ├── expenses.json        ← 20 test expenses covering all 6 scenarios
+│   └── expected_outputs.json ← pre-generated results for verification
 └── tests/
-    └── calculator.test.js  ← 37 unit tests (Jest)
+    └── calculator.test.js   ← 46 unit tests (Jest)
 ```
 
-## Policy used
+## Policy definition
 
-| Benefit | Annual Limit | Per-Visit | Copay | Deductible | Waiting |
-|---------|-------------|-----------|-------|------------|---------|
-| OUTPATIENT | 10,000 THB | 3,000 | 0% | 0 | 0 days |
-| SPECIALIST | 5,000 THB | 2,000 | 20% | 0 | 0 days |
-| INPATIENT | 100,000 THB | — | 10% | 2,000 | 30 days |
-| DENTAL | 2,000 THB | 3,000 | 30% | 0 | 60 days |
+| Benefit | Annual Limit | Per-Visit | Visits/Year | Copay | Deductible | Waiting |
+|---------|-------------|-----------|-------------|-------|------------|---------|
+| OUTPATIENT | 10,000 THB | 3,000 | 30 | 0% | 0 | 0 days |
+| SPECIALIST | 5,000 THB | 2,000 | 20 | **300 THB fixed** | 0 | 0 days |
+| INPATIENT | 100,000 THB | — | unlimited | 10% | 2,000 | 30 days |
+| DENTAL | 2,000 THB | 3,000 | 10 | 30% | 0 | 60 days |
+
+> SPECIALIST uses **fixed copay** (300 THB flat per visit) to demonstrate both copay types.
 
 ## 20 test expenses — scenario coverage
 
 | Scenario | Count | Expense IDs |
 |----------|-------|-------------|
-| ✅ COVERED (full) | 5 | EXP-001..005 |
-| ⚠️ PARTIALLY_COVERED (copay) | 4 | EXP-006, 007, 008, 009 |
+| ✅ COVERED — full | 5 | EXP-001, 002, 003, 004, 005 |
+| ⚠️ PARTIALLY_COVERED — copay | 4 | EXP-006, 007, 008, 009 |
 | ❌ DENIED — waiting period | 3 | EXP-010, 011, 012 |
 | ❌ DENIED — exclusion | 2 | EXP-013, 014 |
 | ⚠️ PARTIALLY_COVERED — remaining limit | 3 | EXP-015, 017, 019 |
@@ -62,9 +87,21 @@ npm test         # 37 unit tests
 ## Test results
 
 ```
-Tests: 37 passed, 37 total
+Tests: 46 passed, 46 total
 ```
 
-Covers: normal coverage, copay %, per-visit limit, deductible (first vs. subsequent expense),
-waiting period boundary, exclusion match, limit exhaustion, remaining-limit partial coverage,
-chronological ordering, unknown benefit type, invalid inputs.
+Test suites cover:
+- `daysBetween` utility
+- Normal coverage (full)
+- Copay percentage
+- Copay fixed amount (+ fixed takes priority over percentage)
+- Per-visit limit
+- Deductible (first expense vs. subsequent — already paid)
+- Waiting period (denial + exact boundary day)
+- Exclusion denial
+- Annual limit exhaustion
+- Partial coverage — remaining limit < eligible
+- Chronological ordering
+- Annual visit limit (denial + countdown + waiting-period-denied does not consume visit)
+- Edge cases: unknown benefit type, invalid inputs
+- Full 20-expense dataset integrity checks
