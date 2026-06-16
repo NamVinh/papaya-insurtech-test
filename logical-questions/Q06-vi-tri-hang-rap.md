@@ -1,34 +1,41 @@
-# Q6 — Vị Trí Tốt Nhất Trong Hàng Xếp Vào Rạp `[O]`
+# Q6 — Vị Trí Tốt Nhất Trong Hàng Xếp Vào Rạp
 
-> **Câu hỏi:** Đứng đầu, giữa hay cuối hàng khi xếp vào rạp? "Tốt nhất" theo tiêu chí nào?
+**Kỹ năng:** Observation &nbsp;|&nbsp; **Cấp độ:** Trung cấp
+
+> *Đứng đầu, giữa hay cuối hàng? "Tốt nhất" theo tiêu chí nào?*
 
 ---
 
-## Phân tích
+## Trước tiên: "tốt nhất" là gì?
 
-### Mục tiêu là gì trước?
+Câu hỏi này không có nghĩa nếu chưa xác định mục tiêu. Tôi hiểu "tốt nhất" = **vào được chỗ ngồi nhanh nhất, tốn ít năng lượng nhất trong quá trình chờ**.
 
-<!-- Trước khi trả lời "đứng đâu", cần xác định rõ "tốt nhất" có nghĩa là gì:
-- Vào rạp nhanh nhất?
-- Ít tốn năng lượng chờ nhất?
-- Thoải mái nhất trong quá trình xếp hàng?
-- Đảm bảo vào được trước giờ phim?
--->
+---
 
-### Phân tích từng vị trí
+## Điểm nghẽn thực sự ở đâu?
 
-| Vị trí | Ưu điểm | Nhược điểm |
-|--------|---------|------------|
-| Đầu hàng | | |
-| Giữa hàng | | |
-| Cuối hàng | | |
+Hầu hết mọi người nghĩ hàng dài = chờ lâu. Nhưng điểm nghẽn thực ra nằm ở **cửa soát vé** — không phải độ dài hàng.
 
-### Điểm nghẽn thực sự ở đâu?
+- Nếu rạp có 2 cửa soát vé: đứng đầu hàng cho cửa nào thông hơn.
+- Nếu chỉ có 1 cửa: đứng đầu rõ ràng có lợi nhất.
+- Nhưng hàng thường đã hình thành trước khi bạn đến — bạn hiếm khi có lựa chọn "đứng đầu".
 
-<!-- Hàng dài không phải lúc nào cũng là vấn đề — bottleneck thường nằm ở cửa soát vé, không phải độ dài hàng.
-Đứng đầu có lợi gì khi cửa soát vé chỉ có 1 người? -->
+---
+
+## Phân tích từng vị trí
+
+| Vị trí | Thực tế | Đánh đổi |
+|--------|---------|----------|
+| **Đầu hàng** | Vào sớm nhất, chọn chỗ ngồi tốt | Phải đến sớm, đứng chờ lâu hơn |
+| **Giữa hàng** | Cân bằng — không quá sớm, không quá muộn | Ít kiểm soát |
+| **Cuối hàng** | Đến muộn được, ít mỏi chân | Vào sau, chỗ ngồi ít lựa chọn hơn |
+
+---
 
 ## Kết luận
 
-<!-- Bạn chọn vị trí nào, với bối cảnh cụ thể nào? -->
+**Vị trí tốt nhất phụ thuộc vào thứ bạn ưu tiên hơn: chỗ ngồi hay thời gian chờ.**
 
+Cá nhân tôi chọn **giữa hàng** trong hầu hết trường hợp — không cần đến quá sớm, không lo mất chỗ ngồi ổn vì đã đặt vé online từ trước. Nếu chưa có vé assigned seat, tôi sẽ cố đứng **đầu hàng** bằng cách đến sớm hơn 15 phút.
+
+> Hiệu ứng bậc hai thường bỏ qua: người đứng **ngay sau tôi** cũng ảnh hưởng đến tốc độ — một nhóm đông phía trước tôi làm chậm cả hàng dù tôi "đứng giữa".
