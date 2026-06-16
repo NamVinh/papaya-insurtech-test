@@ -1,0 +1,202 @@
+[
+  {
+    "expense_id": "EXP-001",
+    "date": "2024-01-15",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "GP Visit",
+    "amount": 500,
+    "diagnosis": "Common cold",
+    "provider": "Bangkok Hospital",
+    "_scenario": "NORMAL_COVERED — small amount, 0% copay, within limits"
+  },
+  {
+    "expense_id": "EXP-002",
+    "date": "2024-02-01",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Blood Test",
+    "amount": 1200,
+    "diagnosis": "Annual health screening",
+    "provider": "Samitivej Hospital",
+    "_scenario": "NORMAL_COVERED — within annual and per-visit limit"
+  },
+  {
+    "expense_id": "EXP-003",
+    "date": "2024-03-10",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "X-Ray",
+    "amount": 2000,
+    "diagnosis": "Chest X-ray",
+    "provider": "BNH Hospital",
+    "_scenario": "NORMAL_COVERED — within limits"
+  },
+  {
+    "expense_id": "EXP-004",
+    "date": "2024-04-05",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Ultrasound",
+    "amount": 2500,
+    "diagnosis": "Abdominal pain",
+    "provider": "Bangkok Hospital",
+    "_scenario": "NORMAL_COVERED — within limits, remaining annual will be 3800"
+  },
+  {
+    "expense_id": "EXP-005",
+    "date": "2024-05-20",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "CT Scan",
+    "amount": 2800,
+    "diagnosis": "Headache evaluation",
+    "provider": "Samitivej Hospital",
+    "_scenario": "NORMAL_COVERED — within per-visit limit 3000, remaining annual becomes 1000"
+  },
+  {
+    "expense_id": "EXP-006",
+    "date": "2024-01-20",
+    "benefit_type": "SPECIALIST",
+    "sub_benefit": "Cardiology Consultation",
+    "amount": 1500,
+    "diagnosis": "Heart palpitations",
+    "provider": "Bangkok Heart Hospital",
+    "_scenario": "PARTIALLY_COVERED_COPAY — 20% copay applied, within per-visit limit"
+  },
+  {
+    "expense_id": "EXP-007",
+    "date": "2024-02-15",
+    "benefit_type": "SPECIALIST",
+    "sub_benefit": "Dermatology",
+    "amount": 2500,
+    "diagnosis": "Skin rash",
+    "provider": "Bangkok Hospital",
+    "_scenario": "PARTIALLY_COVERED_COPAY — per-visit limit 2000 caps eligible, then 20% copay"
+  },
+  {
+    "expense_id": "EXP-008",
+    "date": "2024-06-15",
+    "benefit_type": "INPATIENT",
+    "sub_benefit": "Surgery",
+    "amount": 20000,
+    "diagnosis": "Appendicitis",
+    "provider": "Bangkok Hospital",
+    "_scenario": "PARTIALLY_COVERED_COPAY — deductible 2000 + 10% copay on remainder"
+  },
+  {
+    "expense_id": "EXP-009",
+    "date": "2024-07-20",
+    "benefit_type": "SPECIALIST",
+    "sub_benefit": "Orthopedic Consultation",
+    "amount": 1800,
+    "diagnosis": "Knee pain",
+    "provider": "Vejthani Hospital",
+    "_scenario": "PARTIALLY_COVERED_COPAY — 20% copay applied"
+  },
+  {
+    "expense_id": "EXP-010",
+    "date": "2024-01-10",
+    "benefit_type": "INPATIENT",
+    "sub_benefit": "Emergency Surgery",
+    "amount": 50000,
+    "diagnosis": "Acute appendicitis",
+    "provider": "Bangkok Hospital",
+    "_scenario": "DENIED_WAITING_PERIOD — day 9, need 30 days"
+  },
+  {
+    "expense_id": "EXP-011",
+    "date": "2024-01-20",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Tooth Cleaning",
+    "amount": 800,
+    "diagnosis": "Routine dental cleaning",
+    "provider": "Bangkok Dental Clinic",
+    "_scenario": "DENIED_WAITING_PERIOD — day 19, need 60 days"
+  },
+  {
+    "expense_id": "EXP-012",
+    "date": "2024-02-20",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Root Canal",
+    "amount": 3000,
+    "diagnosis": "Tooth decay",
+    "provider": "Bangkok Dental Clinic",
+    "_scenario": "DENIED_WAITING_PERIOD — day 50, need 60 days"
+  },
+  {
+    "expense_id": "EXP-013",
+    "date": "2024-03-15",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Cosmetic Consultation",
+    "amount": 5000,
+    "diagnosis": "Cosmetic treatment",
+    "provider": "Beauty Clinic",
+    "_scenario": "DENIED_EXCLUSION — diagnosis matches exclusion list"
+  },
+  {
+    "expense_id": "EXP-014",
+    "date": "2024-09-10",
+    "benefit_type": "SPECIALIST",
+    "sub_benefit": "Trichology",
+    "amount": 1500,
+    "diagnosis": "Hair loss treatment",
+    "provider": "Skin & Hair Clinic",
+    "_scenario": "DENIED_EXCLUSION — diagnosis matches exclusion list"
+  },
+  {
+    "expense_id": "EXP-015",
+    "date": "2024-09-20",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Follow-up MRI",
+    "amount": 1500,
+    "diagnosis": "Headache follow-up",
+    "provider": "Samitivej Hospital",
+    "_scenario": "PARTIALLY_COVERED_REMAINING — annual remaining 1000 < expense 1500"
+  },
+  {
+    "expense_id": "EXP-016",
+    "date": "2024-10-01",
+    "benefit_type": "OUTPATIENT",
+    "sub_benefit": "Check-up",
+    "amount": 500,
+    "diagnosis": "General check-up",
+    "provider": "Bangkok Hospital",
+    "_scenario": "DENIED_LIMIT_EXHAUSTED — OUTPATIENT annual limit used up after EXP-015"
+  },
+  {
+    "expense_id": "EXP-017",
+    "date": "2024-09-25",
+    "benefit_type": "SPECIALIST",
+    "sub_benefit": "Gastroenterology",
+    "amount": 2000,
+    "diagnosis": "Digestive issues",
+    "provider": "Samitivej Hospital",
+    "_scenario": "PARTIALLY_COVERED_REMAINING — after copay, covered 1600 but SPECIALIST remaining is ~1400 after EXP-009 drains it"
+  },
+  {
+    "expense_id": "EXP-018",
+    "date": "2024-10-05",
+    "benefit_type": "SPECIALIST",
+    "sub_benefit": "Neurology",
+    "amount": 2000,
+    "diagnosis": "Migraine",
+    "provider": "Bangkok Hospital",
+    "_scenario": "DENIED_LIMIT_EXHAUSTED — SPECIALIST annual limit exhausted"
+  },
+  {
+    "expense_id": "EXP-019",
+    "date": "2024-03-05",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Tooth Extraction",
+    "amount": 3500,
+    "diagnosis": "Wisdom tooth removal",
+    "provider": "Bangkok Dental Clinic",
+    "_scenario": "PARTIALLY_COVERED_REMAINING — per-visit limit 3000 caps eligible, covered_before_limit=2100 > annual_remaining=2000, so covered=2000"
+  },
+  {
+    "expense_id": "EXP-020",
+    "date": "2024-05-10",
+    "benefit_type": "DENTAL",
+    "sub_benefit": "Crown",
+    "amount": 4000,
+    "diagnosis": "Dental crown fitting",
+    "provider": "Bangkok Dental Clinic",
+    "_scenario": "PARTIALLY_COVERED_REMAINING — per-visit limit 3000 caps, then 30% copay, remaining annual dental check"
+  }
+]

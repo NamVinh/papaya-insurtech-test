@@ -1,0 +1,14 @@
+{
+  "name": "challenge-06-benefits-calculator",
+  "version": "1.0.0",
+  "description": "Medical insurance benefits calculator - Papaya Insurtech Challenge 06",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
