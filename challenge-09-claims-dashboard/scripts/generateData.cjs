@@ -81,9 +81,12 @@ for (let i = 1; i <= 5000; i++) {
     approvedAmount = Math.round(submittedAmount * (0.6 + rand() * 0.4));
   }
 
+  // Skewed processing time: 70% 1–7 days, 25% 8–14 days, 5% 15–30 days → avg ~7 days
   let processedDate = '';
   if (status !== 'PENDING') {
-    processedDate = addDays(submittedDate, randInt(1, 30));
+    const u = rand();
+    const ptDays = u < 0.70 ? randInt(1, 7) : u < 0.95 ? randInt(8, 14) : randInt(15, 30);
+    processedDate = addDays(submittedDate, ptDays);
   }
 
   const assessor = pick(ASSESSORS);
